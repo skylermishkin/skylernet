@@ -12,12 +12,12 @@
 {% block content %}
 <!-- most of this content came from https://github.com/BlackrockDigital/startbootstrap-business-frontpage -->
 
-<!-- div with Background Image -->
+<!-- div with Background Image... see the css -->
 <header class="business-header">
   <div class="container">
     <div class="row">
       <div class="col-lg-12">
-        <h1 class="display-3 text-center text-white mt-4">Aww yea</h1>
+        <h1 class="display-3 text-center text-white mt-4">The Sky's the Limit</h1>
       </div>
     </div>
   </div>
@@ -29,30 +29,21 @@ see LICENSE-BLACKROCK.txt for licensing information
 <div class="container">
 
   <div class="row">
-    <div class="col-sm-8">
-      <h2 class="mt-4">I'm a pretty cool guy</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A deserunt neque tempore recusandae animi soluta quasi? Asperiores rem dolore eaque vel, porro, soluta unde debitis aliquam laboriosam. Repellat explicabo, maiores!</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis optio neque consectetur consequatur magni in nisi, natus beatae quidem quam odit commodi ducimus totam eum, alias, adipisci nesciunt voluptate. Voluptatum.</p>
-      <p>
-        <a class="btn btn-primary btn-lg" href="#">Call to Action &raquo;</a>
+    <div class="col-sm-3"></div>
+    <div class="col-sm-6">
+      <h2 class="mt-4 text-center">Hi!</h2>
+      <p class="text-justify">
+        I'm Skyler and I've got a lot to offer. Professionally, I am an experienced molecular biologist and
+        bioinformatician, who also has full-stack development skills. Casually, I am a musician, artist, game
+        enthusiast, and fairly-coordinated nice person.
+      </p>
+      <p class="text-justify">
+        Hopefully you're someone who may know of me already, and who's looking to learn some more. Maybe
+        you're interested in me working or collaborating with you and your team. Maybe you like Wordl, or some of the
+        other projects I've worked on. And if you're none of the above, may you still find something interesting.
       </p>
     </div>
-    <div class="col-sm-4">
-      <h2 class="mt-4">Get in touch!</h2>
-      <address>
-        <strong>Skyler Mishkin</strong>
-        <br>3100 Broadway St. Apt#206
-        <br>Boulder, Co 80304
-        <br>
-      </address>
-      <address>
-        <abbr title="Phone">P:</abbr>
-        Nah
-        <br>
-        <abbr title="Email">E:</abbr>
-        <a href="mailto:#">Nah</a>
-      </address>
-    </div>
+    <div class="col-sm-3"></div>
   </div>
   <!-- /.row -->
 
@@ -61,11 +52,12 @@ see LICENSE-BLACKROCK.txt for licensing information
       <div class="card">
         <img class="card-img-top" src="http://placehold.it/300x200" alt="">
         <div class="card-body">
-          <h4 class="card-title">Card title</h4>
-          <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque sequi doloribus.</p>
+          <h4 class="card-title">Reading Time!</h4>
+          <p class="card-text text-justify">I've written a few blog posts. Learn about this site, my experience in biotechnology,
+          and some other topics I'm passionate about.</p>
         </div>
         <div class="card-footer">
-          <a href="#" class="btn btn-primary">Find Out More!</a>
+          <a href="{% url 'blog:index' %}" class="btn btn-primary">Blog</a>
         </div>
       </div>
     </div>
@@ -73,11 +65,12 @@ see LICENSE-BLACKROCK.txt for licensing information
       <div class="card">
         <img class="card-img-top" src="http://placehold.it/300x200" alt="">
         <div class="card-body">
-          <h4 class="card-title">Card title</h4>
-          <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque sequi doloribus totam ut praesentium aut.</p>
+          <h4 class="card-title">Woo Creativity!</h4>
+          <p class="card-text text-justify">Check out some of the projects I've hosted on the web. From bioinformatics applications
+            to games, my nerdy-ness <i>WILL</i> be apparent.</p>
         </div>
         <div class="card-footer">
-          <a href="#" class="btn btn-primary">Find Out More!</a>
+          <a href="{% url 'portfolio:index' %}" class="btn btn-primary">Projects</a>
         </div>
       </div>
     </div>
@@ -85,15 +78,14 @@ see LICENSE-BLACKROCK.txt for licensing information
       <div class="card">
         <img class="card-img-top" src="http://placehold.it/300x200" alt="">
         <div class="card-body">
-          <h4 class="card-title">Card title</h4>
-          <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
+          <h4 class="card-title">Let's Connect!</h4>
+          <p class="card-text text-justify">I've got a lot to offer. Grab a copy of my resume or CV, shoot me an email, or connect through social media.</p>
         </div>
         <div class="card-footer">
-          <a href="#" class="btn btn-primary">Find Out More!</a>
+          <a href="todo" class="btn btn-primary">Connect</a>
         </div>
       </div>
     </div>
-
   </div>
   <!-- /.row -->
 

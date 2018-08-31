@@ -21,7 +21,7 @@
     <title>{% block title %}SkylerNet{% endblock %}</title>
   </head>
 
-  <body>
+  <body style="background-color:#e0fafa">
     <div id="nav">
       {% block navbar %}
       <!-- Navigation from https://startbootstrap.com/template-categories/all/
@@ -44,7 +44,7 @@
                 <a class="nav-link" href="{% url 'blog:index' %}">Blog</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="{% url 'portfolio:index' %}">Portfolio</a>
+                <a class="nav-link" href="{% url 'portfolio:index' %}">Projects</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="todo">Connect</a>

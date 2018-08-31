@@ -6,7 +6,6 @@ def index(request):
     return render(request, 'portfolio/index.html', context)
 
 
-def project(request):
+def project(request, project_name=None):
     context = {}
     return render(request, 'portfolio/project.html', context)
-
