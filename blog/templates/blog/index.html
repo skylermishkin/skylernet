@@ -30,11 +30,11 @@ see LICENSE-BLACKROCK.txt for licensing information
       {% for post in displayed_posts %}
       <!-- Blog Post -->
       <div class="card mb-4">
-        <img class="card-img-top" src="{{ post.image.url }}" alt="Image for {{ post.title }}" style="width:750px;height:300px">
+        <img class="card-img-top" src="{{ post.image.url }}" alt="Image for {{ post.title }}">
         <div class="card-body">
           <h2 class="card-title">{{ post.title }}</h2>
           <p class="card-text">{{ post.briefing }}</p>
-          <a href="#" class="btn btn-primary">Read More &rarr;</a>
+          <a href="{{ post.slug }}" class="btn btn-primary">Read More &rarr;</a>
         </div>
         <div class="card-footer text-muted">
           Posted on {{ post.date_posted }} by
