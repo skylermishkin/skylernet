@@ -2,7 +2,7 @@
 
 {% load static %}
 
-{% block title %}Skyler's Blog{% endblock %}
+{% block title %}Blog Home{% endblock %}
 
 {% block styles %}
 <!-- Custom styles for this template -->
@@ -11,7 +11,7 @@
 {% endblock %}
 
 {% block content %}
-<!-- Page Content largely from https://github.com/BlackrockDigital/startbootstrap-blog-home
+<!-- Page Content used https://github.com/BlackrockDigital/startbootstrap-blog-home
 see LICENSE-BLACKROCK.txt for licensing information
 -->
 <div class="container">
@@ -60,48 +60,24 @@ see LICENSE-BLACKROCK.txt for licensing information
     <!-- Sidebar Widgets Column -->
     <div class="col-md-4">
       {% block blog_right_col %}
-      <!-- Search Widget -->
-      <div class="card my-4">
-        <h5 class="card-header">Search blog posts</h5>
-        <div class="card-body">
-          <div class="input-group">
-            <input type="text" class="form-control" placeholder="Search for...">
-            <span class="input-group-btn">
-              <button class="btn btn-secondary" type="button">Go!</button>
-            </span>
-          </div>
-        </div>
-      </div>
-
       <!-- Categories Widget -->
       <div class="card my-4">
-        <h5 class="card-header">Categories</h5>
+        <h5 class="card-header">Tags</h5>
         <div class="card-body">
           <div class="row">
             <div class="col-lg-6">
               <ul class="list-unstyled mb-0">
+                {% for tag in tags %}
                 <li>
-                  <a href="#">Web Design</a>
+                  <a href="#">{{ tag.name }}</a>
                 </li>
-                <li>
-                  <a href="#">Bioinformatics</a>
-                </li>
-                <li>
-                  <a href="#">Games</a>
-                </li>
+                {% empty %}
+                {% endfor %}
               </ul>
             </div>
             <div class="col-lg-6">
               <ul class="list-unstyled mb-0">
-                <li>
-                  <a href="#">Science</a>
-                </li>
-                <li>
-                  <a href="#">Biotechnology</a>
-                </li>
-                <li>
-                  <a href="#">Freelancing</a>
-                </li>
+                <!-- I need to do something to make these tags into 2 cols -->
               </ul>
             </div>
           </div>
@@ -120,6 +96,7 @@ see LICENSE-BLACKROCK.txt for licensing information
         </div>
       </div>
       {% endblock %}
+
     </div>
 
   </div>

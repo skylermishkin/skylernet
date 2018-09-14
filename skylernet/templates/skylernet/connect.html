@@ -1,0 +1,70 @@
+{% extends 'skylernet/base.html' %}
+
+{% load static %}
+
+{% block title %}Connect with Skyler{% endblock %}
+
+{% block styles %}
+<!-- Custom styles for this template -->
+<link href="{% static 'portfolio/portfolio.css' %}" rel="stylesheet" type='text/css'>
+{% endblock %}
+
+{% block content %}
+<!-- Page Content from https://github.com/BlackrockDigital/startbootstrap-1-col-portfolio
+See LICENSE-BLACKROCK.txt for licensing information
+-->
+<div class="container">
+
+  <!-- Page Heading -->
+  <h1 class="my-4">Let's Connect</h1>
+
+  <hr>
+
+  <!-- Resume -->
+  <div class="row justify-content-center">
+    <div class="col-md-4">
+      <img class="img-fluid rounded mb-3 mb-md-0" src="" alt="Image of my resume.">
+    </div>
+    <div class="col-md-4 text-center">
+      <h3>My Resume</h3>
+      <p>Here ya go!</p>
+      <a class="btn btn-primary" href="/static/skylernet/skyler_mishkin_resume.pdf">Grab a copy</a>
+    </div>
+  </div>
+  <hr>
+  <!-- Email -->
+  <div class="row justify-content-center">
+    <div class="col-md-4 text-center">
+      <h3>Email me</h3>
+      <p>Just click the button</p>
+      <a href="">Say Hi</a>
+    </div>
+    <div class="col-md-4">
+      <img class="img-fluid rounded mb-3 mb-md-0" src="" alt="Image of email?">
+    </div>
+  </div>
+  <hr>
+  <!-- Social Media -->
+  <div class="row justify-content-center">
+      <div class="col-md-4 text-center">
+          <h3>Social Media</h3>
+          {% for media in social_media %}
+          <div class="row">
+              <div class="col-md-3">
+                  <a href="{{ media.slug }}">
+                    <img class="img-fluid rounded mb-3 mb-md-0" src="" alt="{{ media.name }} Icon">
+                  </a>
+              </div>
+              <div class="col-md-9">
+                  {{ media.name }}
+              </div>
+          </div>
+          {% empty %}
+          <p>Sorry, I haven't added any social media yet.</p>
+          {% endfor %}
+      </div>
+  </div>
+
+</div>
+<!-- /.container -->
+{% endblock %}
