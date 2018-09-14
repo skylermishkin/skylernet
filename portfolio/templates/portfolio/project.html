@@ -31,36 +31,22 @@ see LICENSE-BLACKROCK.txt for licensing information
   <!-- /.row -->
 
   <!-- Related Projects Row -->
+  {% if related_projects %}
   <h3 class="my-4">Related Projects</h3>
 
   <div class="row">
-
+    {% for project in related_projects %}
     <div class="col-md-3 col-sm-6 mb-4">
-      <a href="#">
-        <img class="img-fluid" src="http://placehold.it/500x300" alt="">
+      <a href="{{ project.slug }}">
+        <img class="img-fluid" src="project.image.url" alt="Image for {{ project.title }}">
       </a>
     </div>
-
-    <div class="col-md-3 col-sm-6 mb-4">
-      <a href="#">
-        <img class="img-fluid" src="http://placehold.it/500x300" alt="">
-      </a>
-    </div>
-
-    <div class="col-md-3 col-sm-6 mb-4">
-      <a href="#">
-        <img class="img-fluid" src="http://placehold.it/500x300" alt="">
-      </a>
-    </div>
-
-    <div class="col-md-3 col-sm-6 mb-4">
-      <a href="#">
-        <img class="img-fluid" src="http://placehold.it/500x300" alt="">
-      </a>
-    </div>
-
+    {% empty %}
+    {% endfor %}
   </div>
   <!-- /.row -->
+  {% endif %}
+  <br>
 
 </div>
 <!-- /.container -->

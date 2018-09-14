@@ -10,7 +10,7 @@ def project_upload_path(instance, filename):
 
 class Project(models.Model):
     title = models.CharField(primary_key=True, unique=True, max_length=100)
-    image = models.ImageField(upload_to=project_upload_path, blank=True)
+    image = models.ImageField(upload_to=project_upload_path)
     short = models.CharField(max_length=1000)
     long = models.TextField(max_length=10000)
     live_url = models.URLField()
