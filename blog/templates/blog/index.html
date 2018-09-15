@@ -36,12 +36,13 @@ see LICENSE-BLACKROCK.txt for licensing information
             {{ post.briefing }}
             <br>
             <form method="get" action="{% url 'blog:index' %}">
-            <b style="display:inline">Tags:</b>
-            {% for tag in post.tags.get_queryset %}
-            <button style="background:none;border:none;margin:0;padding:5;display:inline;" class="page-link" name="tag" value="{{ tag.slug }}">{{ tag.name }}</button>
-            {% empty %}
-            {% endfor %}
-          </form>
+              <b style="display:inline">Tags:</b>
+              {% for tag in post.tags.get_queryset %}
+              <button style="background:none;border:none;margin:0;padding:5;display:inline;"
+                      class="page-link" name="tag" value="{{ tag.slug }}">{{ tag.name }}</button>
+              {% empty %}
+              {% endfor %}
+            </form>
           </p>
           <a href="{{ post.slug }}" class="btn btn-primary">Read More &rarr;</a>
         </div>
@@ -76,7 +77,8 @@ see LICENSE-BLACKROCK.txt for licensing information
         <div class="card-body">
           <form method="get" action="{% url 'blog:index' %}">
             {% for tag in tags %}
-            <button style="background:none;border:none;margin:0;padding:5;display:inline;" class="page-link" name="tag" value="{{ tag.slug }}">{{ tag.name }}</button>
+            <button style="background:none;border:none;margin:0;padding:5;display:inline;" class="page-link" name="tag"
+                    value="{{ tag.slug }}">{{ tag.name }}</button>
             {% empty %}
             {% endfor %}
           </form>

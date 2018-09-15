@@ -24,14 +24,12 @@ See LICENSE-BLACKROCK.txt for licensing information
   <div class="row justify-content-center">
     <div class="col-md-4 text-center">
       <h3>My Resume</h3>
-      <p>If you'd like a more detailed CV, just ask.</p>
-      <a class="btn btn-primary" href="/static/skylernet/skyler_mishkin_resume.pdf">Grab a copy</a>
-    </div>
-    <div class="col-md-4">
-      <img class="img-fluid rounded mb-3 mb-md-0" src="" alt="Image of my resume.">
+      <p>Feel free to grab a copy. If you'd like a more detailed CV, just ask.</p>
+      <a class="btn btn-primary" href="/static/skylernet/skyler_mishkin_resume.pdf">View</a>
     </div>
   </div>
-  <hr>
+  <br>
+  <br>
   <!-- Email -->
   <div class="row justify-content-center">
     <div class="col-md-4 text-center">
@@ -39,29 +37,25 @@ See LICENSE-BLACKROCK.txt for licensing information
       <p>Just click the button! Or use the email in my resume.</p>
       <a class="btn btn-primary" href="mailto:skyler@mishkin.com">Say Hi</a>
     </div>
-    <div class="col-md-4">
-      <img class="img-fluid rounded mb-3 mb-md-0" src="" alt="Image of email?">
-    </div>
   </div>
   <hr>
-  <!-- Social Media -->
+  <!-- Online Media -->
   <div class="row justify-content-center">
       <div class="col-md-4 text-center">
-          <h3>Social Media</h3>
-          {% for media in social_media %}
-          <div class="row">
-              <div class="col-md-3">
-                  <a href="{{ media.slug }}">
-                    <img class="img-fluid rounded mb-3 mb-md-0" src="" alt="{{ media.name }} Icon">
+          <h3>Online Media</h3>
+          <div class="row justify-content-center">
+              {% for media in online_media %}
+              <div class="col inline" >
+                  <a href="{{ media.href }}">
+                    <img class="img-responsive rounded" src="{{ media.src }}" alt="{{ media.name }}" height="50px">
                   </a>
               </div>
-              <div class="col-md-9">
-                  {{ media.name }}
-              </div>
+              {% empty %}
+              <p>Sorry, I haven't added any social media yet.</p>
+              {% endfor %}
           </div>
-          {% empty %}
-          <p>Sorry, I haven't added any social media yet.</p>
-          {% endfor %}
+          <br>
+          <br>
       </div>
   </div>
 
