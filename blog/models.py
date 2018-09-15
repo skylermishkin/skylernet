@@ -9,7 +9,13 @@ def post_upload_path(instance, filename):
 
 
 class Tag(models.Model):
-    name = models.CharField(primary_key=True, max_length=40)
+    name = models.CharField(primary_key=True, unique=True, max_length=40)
+
+    slug = models.SlugField(max_length=50, default="auto")
+
+    def save(self, *args, **kwargs):
+        self.slug = slugify(unidecode(self.name))
+        super().save(*args, **kwargs)
 
 
 class Post(models.Model):
@@ -25,7 +31,7 @@ class Post(models.Model):
     tags = models.ManyToManyField(Tag)
 
     # TODO: can I make this absent from the admin form rather than a default?
-    slug = models.SlugField(max_length=140, unique=True, default="temp")
+    slug = models.SlugField(max_length=140, unique=True, default="auto")
 
     def __str__(self):
         return self.title
