@@ -16,6 +16,6 @@ urlpatterns = [
 ]
 
 
-# So that I can access media files during development
+# To access media files during development
 if settings.DEBUG is True:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -34,16 +34,26 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    # This site
     'skylernet',
     'blog.apps.BlogConfig',
     'portfolio.apps.PortfolioConfig',
+
+    # Django
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
+
+    # Third Party
+    'disqus',
 ]
+
+DISQUS_API_KEY = "0Q1wO2yD2BitaTJbG9vHIntpFf5dg1T1TMflvkAx56xE0IW5GnGvxT8lT2eMlMLj"
+DISQUS_WEBSITE_SHORTNAME = "skyler-mishkin"
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
