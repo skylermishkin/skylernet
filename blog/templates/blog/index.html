@@ -47,8 +47,7 @@ see LICENSE-BLACKROCK.txt for licensing information
           <a href="{{ post.slug }}" class="btn btn-primary">Read More &rarr;</a>
         </div>
         <div class="card-footer text-muted">
-          Posted on {{ post.date_posted }} by
-          <a href="#">{{ post.author }}</a>
+          Posted on {{ post.date_posted }} by {{ post.author }}; Last updated on {{ post.date_updated }}.
         </div>
       </div>
       {% empty %}

@@ -20,36 +20,38 @@ See LICENSE-BLACKROCK.txt for licensing information
 
   <hr>
 
-  <!-- Resume -->
-  <div class="row justify-content-center">
-    <div class="col-md-4 text-center">
+  <div class="row">
+    <!-- Resume -->
+    <div class="col-md-4">
       <h3>My Resume</h3>
       <p>Feel free to grab a copy. If you'd like a more detailed CV, just ask.</p>
-      <a class="btn btn-primary" href="/static/skylernet/skyler_mishkin_resume.pdf">View</a>
+      <a class="btn btn-primary" href="/static/skylernet/skyler_mishkin_resume.pdf" target="_blank" rel="noopener">View</a>
     </div>
-  </div>
-  <br>
-  <br>
-  <!-- Email -->
-  <div class="row justify-content-center">
-    <div class="col-md-4 text-center">
+    <div>
+      <br>
+      <br>
+    </div>
+    <!-- Email -->
+    <div class="col-md-4">
       <h3>Email me</h3>
       <p>Just click the button! Or use the email in my resume.</p>
       <a class="btn btn-primary" href="mailto:skyler@mishkin.com">Say Hi</a>
     </div>
   </div>
+  <br>
   <hr>
   <!-- Online Media -->
-  <div class="row justify-content-center">
-      <div class="col-md-4 text-center">
+  <div class="row">
+      <div class="col-sm-8">
           <h3>Online Media</h3>
-          <div class="row justify-content-center">
+          <div class="row">
               {% for media in online_media %}
-              <div class="col inline" >
+              <div class="col-sm-2" >
                   <a href="{{ media.href }}">
-                    <img class="img-responsive rounded" src="{{ media.src }}" alt="{{ media.name }}" height="50px">
+                    <img class="img-responsive rounded" src="{{ media.src }}" alt="{{ media.name }}" height="40px">
                   </a>
               </div>
+              <div><br></div>
               {% empty %}
               <p>Sorry, I haven't added any social media yet.</p>
               {% endfor %}
