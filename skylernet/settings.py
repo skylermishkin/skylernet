@@ -10,7 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/2.1/ref/settings/
 """
 
-from .settings_secret import SECRET_KEY
+from .settings_secret import SECRET_KEY, DISQUS_API_KEY, DATABASE_USER, DATABASE_PASSWORD
 
 import os
 
@@ -31,7 +31,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+#ALLOWED_HOSTS = ['skyler.mishkin.com', '206.189.65.5', 'localhost']
 
 
 # Application definition
@@ -55,7 +55,6 @@ INSTALLED_APPS = [
     'disqus',
 ]
 
-DISQUS_API_KEY = "0Q1wO2yD2BitaTJbG9vHIntpFf5dg1T1TMflvkAx56xE0IW5GnGvxT8lT2eMlMLj"
 DISQUS_WEBSITE_SHORTNAME = "skyler-mishkin"
 
 MIDDLEWARE = [
@@ -94,8 +93,12 @@ WSGI_APPLICATION = 'skylernet.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'skylernet',
+        'USER': DATABASE_USER,
+        'PASSWORD': DATABASE_PASSWORD,
+        'HOST': 'localhost',
+        'PORT': '',
     }
 }
 
